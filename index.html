@@ -21,6 +21,7 @@
     --shadow-lg: 0 12px 32px rgba(34, 51, 39, 0.12), 0 4px 12px rgba(34, 51, 39, 0.06);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; width: 100%; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -30,7 +31,7 @@
     -webkit-font-smoothing: antialiased;
     font-size: 15px;
   }
-  .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; width: 100%; }
 
   /* STATS BAR */
   .stats-bar { background: var(--white); border-bottom: 1px solid var(--bone); padding: 28px 0; }
@@ -52,8 +53,8 @@
 
   /* CARDS */
   .deals-section { padding: 24px 0 50px; }
-  .deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 22px; }
-  .card { background: var(--white); border-radius: 4px; overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.2s ease; display: flex; flex-direction: column; border: 1px solid var(--bone); position: relative; }
+  .deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 22px; }
+  .card { background: var(--white); border-radius: 4px; overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.2s ease; display: flex; flex-direction: column; border: 1px solid var(--bone); position: relative; min-width: 0; }
   .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--green-mid); }
   .card-header { background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-primary) 100%); color: var(--white); padding: 18px 20px; position: relative; }
   .card-status { position: absolute; top: 16px; right: 16px; font-size: 9.5px; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 10px; border-radius: 12px; font-weight: 600; }
@@ -75,12 +76,12 @@
   .donut-center-value { font-family: Georgia, serif; font-size: 16px; color: var(--green-deep); line-height: 1; font-weight: 600; }
   .donut-center-label { font-size: 8.5px; letter-spacing: 1px; color: var(--mauve); text-transform: uppercase; margin-top: 3px; }
   .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; }
-  .kpi { display: flex; flex-direction: column; }
+  .kpi { display: flex; flex-direction: column; min-width: 0; }
   .kpi-value { font-family: Georgia, serif; font-size: 16px; color: var(--green-deep); font-weight: 600; line-height: 1.1; }
   .kpi-value.amber { color: var(--amber); }
   .kpi-value.qualitative { font-size: 13px; font-family: inherit; }
   .kpi-label { font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--mauve); margin-top: 3px; font-weight: 500; }
-  .donut-legend { display: flex; justify-content: center; gap: 10px; margin-top: 6px; font-size: 9px; color: var(--mauve); text-transform: uppercase; letter-spacing: 0.8px; }
+  .donut-legend { display: flex; justify-content: center; gap: 10px; margin-top: 6px; font-size: 9px; color: var(--mauve); text-transform: uppercase; letter-spacing: 0.8px; flex-wrap: wrap; }
   .legend-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 3px; vertical-align: middle; }
 
   .card-body { padding: 16px 20px 14px; flex: 1; display: flex; flex-direction: column; }
@@ -91,10 +92,10 @@
   .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--bone); }
   .tag { font-size: 10px; letter-spacing: 0.5px; color: var(--green-primary); background: var(--bone-light); padding: 3px 8px; border-radius: 3px; border: 1px solid var(--bone); }
 
-  .card-footer { padding: 12px 20px 16px; background: var(--white); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--bone); }
+  .card-footer { padding: 12px 20px 16px; background: var(--white); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--bone); flex-wrap: wrap; gap: 10px; }
   .card-ticket { font-family: Georgia, serif; font-size: 14px; color: var(--green-deep); font-weight: 600; }
   .card-ticket-label { display: block; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--mauve); font-weight: 500; font-family: inherit; margin-bottom: 2px; }
-  .btn-request { background: var(--green-primary); color: var(--white); border: none; padding: 9px 16px; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-weight: 600; transition: background 0.15s ease; font-family: inherit; border-radius: 2px; }
+  .btn-request { background: var(--green-primary); color: var(--white); border: none; padding: 9px 16px; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-weight: 600; transition: background 0.15s ease; font-family: inherit; border-radius: 2px; white-space: nowrap; }
   .btn-request:hover { background: var(--green-deep); }
 
   /* CTA BLOCK */
@@ -109,7 +110,7 @@
   .request-block { margin-top: 30px; padding-top: 28px; border-top: 1px solid rgba(218, 215, 205, 0.2); }
   .request-block h2 { font-size: 22px; margin-bottom: 12px; }
   .contact-line { font-size: 14px; color: var(--bone); line-height: 1.7; }
-  .contact-line a { color: var(--amber-soft); text-decoration: none; font-weight: 600; }
+  .contact-line a { color: var(--amber-soft); text-decoration: none; font-weight: 600; word-break: break-all; }
   .contact-line a:hover { color: var(--amber); text-decoration: underline; }
   .contact-line .separator { color: var(--green-mid); margin: 0 10px; }
 
@@ -131,14 +132,85 @@
   .btn-submit { background: var(--amber); color: var(--green-deep); border: none; padding: 9px 22px; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-weight: 700; border-radius: 2px; font-family: inherit; }
   .btn-submit:hover { background: var(--amber-soft); }
 
-  @media (max-width: 720px) {
-    .container { padding: 0 18px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .stat:nth-child(2) { border-right: none; }
+  /* ============================================================
+     RESPONSIVE — three breakpoints for proper mobile handling
+     ============================================================ */
+
+  /* Tablet */
+  @media (max-width: 900px) {
     .deals-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr; }
-    .contact-line .separator { display: block; height: 4px; visibility: hidden; }
+    .container { padding: 0 22px; }
   }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    .container { padding: 0 16px; }
+
+    /* Stats: 2x2 instead of 4x1 */
+    .stats-bar { padding: 22px 0; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
+    .stat { border-right: none; border-bottom: 1px solid var(--bone); padding-bottom: 14px; }
+    .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; padding-bottom: 0; }
+    .stat-number { font-size: 26px; }
+
+    /* Filters */
+    .filters { padding: 22px 0 4px; }
+    .filter-label { font-size: 10px; margin-bottom: 4px; width: 100%; }
+    .filter-group { margin-right: 0; gap: 6px; }
+    .filter-chip { font-size: 11.5px; padding: 6px 11px; }
+    .results-count { width: 100%; margin-left: 0; margin-top: 8px; text-align: left; }
+
+    /* Cards */
+    .deals-section { padding: 18px 0 36px; }
+    .deals-grid { gap: 16px; }
+    .card-header { padding: 16px 16px; }
+    .card-title { font-size: 17px; padding-right: 90px; }
+    .card-status { font-size: 9px; padding: 3px 8px; top: 14px; right: 14px; }
+
+    /* Viz: stack donut above KPIs on very small screens */
+    .card-viz { grid-template-columns: 90px 1fr; gap: 12px; padding: 14px 16px 12px; }
+    .donut-wrap { width: 86px; height: 86px; }
+    .donut-center-value { font-size: 14px; }
+    .kpi-grid { gap: 6px 10px; }
+    .kpi-value { font-size: 14px; }
+    .kpi-value.qualitative { font-size: 11.5px; }
+    .kpi-label { font-size: 9px; }
+
+    .card-body { padding: 14px 16px 12px; }
+    .card-summary { font-size: 13px; }
+    .highlights li { font-size: 12px; }
+    .card-footer { padding: 12px 16px 14px; }
+    .card-ticket { font-size: 13px; }
+
+    /* CTA */
+    .cta-section { padding: 36px 0; }
+    .cta-section h2 { font-size: 22px; }
+    .cta-section p { font-size: 13.5px; }
+    .steps { grid-template-columns: 1fr; gap: 12px; margin: 14px 0 24px; }
+    .steps li { font-size: 13px; padding-left: 32px; }
+    .steps li::before { font-size: 19px; }
+    .request-block h2 { font-size: 20px; }
+    .contact-line .separator { display: block; height: 4px; visibility: hidden; margin: 0; }
+
+    /* Modal: full-screen feel on mobile */
+    .modal-overlay { padding: 0; }
+    .modal { max-height: 100vh; height: 100%; border-radius: 0; }
+    .modal-header { padding: 18px 20px; }
+    .modal-body { padding: 18px 20px; }
+    .modal-footer { padding: 12px 20px 20px; }
+  }
+
+  /* Very narrow (small phones) */
+  @media (max-width: 380px) {
+    .card-viz { grid-template-columns: 78px 1fr; gap: 10px; }
+    .donut-wrap { width: 74px; height: 74px; }
+    .donut-center-value { font-size: 12px; }
+    .donut-center-label { font-size: 7.5px; }
+    .kpi-value { font-size: 13px; }
+    .kpi-value.qualitative { font-size: 11px; }
+  }
+
   .card.hidden { display: none; }
 </style>
 </head>
@@ -705,6 +777,7 @@
       }
     });
     resultsCount.textContent = `Showing ${visible} of ${cards.length} opportunities`;
+    sendHeight();
   }
 
   function openModal(dealName) {
@@ -741,6 +814,38 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
+
+  /* ============================================================
+     AUTO-RESIZE — sends height to parent (Wix) so iframe matches content
+     Eliminates internal scrollbar and avoids cut-off content on mobile.
+     ============================================================ */
+  function sendHeight() {
+    const height = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
+    try {
+      window.parent.postMessage({ type: 'weaverDealRoomHeight', height: height }, '*');
+    } catch (e) { /* cross-origin parent — ignore */ }
+  }
+
+  // Send on load, on resize, and when filters change
+  window.addEventListener('load', () => {
+    sendHeight();
+    setTimeout(sendHeight, 200);
+    setTimeout(sendHeight, 800);
+  });
+  window.addEventListener('resize', sendHeight);
+
+  // Periodic safety re-send for slow font/image loads
+  let resizeTicker = 0;
+  const interval = setInterval(() => {
+    sendHeight();
+    resizeTicker++;
+    if (resizeTicker > 6) clearInterval(interval);
+  }, 1500);
 </script>
 
 </body>
