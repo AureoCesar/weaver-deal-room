@@ -36,11 +36,8 @@
     font-size: 15px;
   }
   .container { max-width: 1280px; margin: 0 auto; padding: 0 28px; width: 100%; }
-
-  /* Last visible section ends flush — no trailing whitespace */
   .cta-section:last-child { margin-bottom: 0; padding-bottom: 50px; }
 
-  /* STATS BAR */
   .stats-bar { background: var(--white); border-bottom: 1px solid var(--bone); padding: 28px 0; }
   .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
   .stat { text-align: center; border-right: 1px solid var(--bone); padding: 4px 0; }
@@ -48,7 +45,6 @@
   .stat-number { font-family: Georgia, serif; font-size: 30px; color: var(--green-primary); font-weight: 400; line-height: 1; }
   .stat-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--mauve); margin-top: 6px; }
 
-  /* FILTERS */
   .filters { padding: 28px 0 8px; }
   .filters-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
   .filter-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mauve); font-weight: 600; margin-right: 8px; }
@@ -58,7 +54,6 @@
   .filter-group { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-right: 18px; }
   .results-count { margin-left: auto; font-size: 12px; color: var(--mauve); font-style: italic; }
 
-  /* CARDS */
   .deals-section { padding: 24px 0 50px; }
   .deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 22px; }
   .card { background: var(--white); border-radius: 4px; overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.2s ease; display: flex; flex-direction: column; border: 1px solid var(--bone); position: relative; min-width: 0; }
@@ -105,7 +100,6 @@
   .btn-request { background: var(--green-primary); color: var(--white); border: none; padding: 9px 16px; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-weight: 600; transition: background 0.15s ease; font-family: inherit; border-radius: 2px; white-space: nowrap; }
   .btn-request:hover { background: var(--green-deep); }
 
-  /* CTA BLOCK */
   .cta-section { background: var(--green-deep); color: var(--white); padding: 50px 0 40px; }
   .cta-section h2 { font-family: Georgia, serif; font-size: 26px; font-weight: 400; color: var(--white); margin-bottom: 14px; }
   .cta-section h2 .accent { color: var(--amber); }
@@ -121,7 +115,6 @@
   .contact-line a:hover { color: var(--amber); text-decoration: underline; }
   .contact-line .separator { color: var(--green-mid); margin: 0 10px; }
 
-  /* MODAL */
   .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(34, 51, 39, 0.65); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
   .modal-overlay.active { display: flex; }
   .modal { background: var(--white); border-radius: 4px; max-width: 540px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-lg); }
@@ -139,7 +132,6 @@
   .btn-submit { background: var(--amber); color: var(--green-deep); border: none; padding: 9px 22px; font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; font-weight: 700; border-radius: 2px; font-family: inherit; }
   .btn-submit:hover { background: var(--amber-soft); }
 
-  /* RESPONSIVE */
   @media (max-width: 900px) {
     .deals-grid { grid-template-columns: 1fr; }
     .container { padding: 0 22px; }
@@ -208,7 +200,7 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat"><div class="stat-number">10</div><div class="stat-label">Active Mandates</div></div>
-      <div class="stat"><div class="stat-number">$1.8B+</div><div class="stat-label">Aggregate Ticket</div></div>
+      <div class="stat"><div class="stat-number">$150M+</div><div class="stat-label">Aggregate Ticket</div></div>
       <div class="stat"><div class="stat-number">8</div><div class="stat-label">Countries Covered</div></div>
       <div class="stat"><div class="stat-number">6</div><div class="stat-label">Sectors</div></div>
     </div>
@@ -296,47 +288,6 @@
         <div class="card-footer">
           <div><span class="card-ticket-label">Senior Debt Sought</span><span class="card-ticket">USD 19.5M</span></div>
           <button class="btn-request" onclick="openModal('Hybrid Solar PV + BESS IPP')">Request IM</button>
-        </div>
-      </article>
-
-      <article class="card" data-sector="energy" data-region="ssa" data-type="refi">
-        <div class="card-header">
-          <span class="card-status status-prospective">Prospective</span>
-          <div class="card-sector">Energy · Power Utilities</div>
-          <h3 class="card-title">Power Sector Debt Refinancing</h3>
-          <div class="card-geo">Sub-Saharan Africa · West Africa</div>
-        </div>
-        <div class="card-viz">
-          <div>
-            <div class="donut-wrap">
-              <svg class="donut" viewBox="0 0 120 120">
-                <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
-                <circle class="donut-debt" cx="60" cy="60" r="50" stroke-dasharray="314.16 314.16" stroke-dashoffset="0"></circle>
-              </svg>
-              <div class="donut-center"><div class="donut-center-value">$1.6B</div><div class="donut-center-label">Refi Size</div></div>
-            </div>
-            <div class="donut-legend"><span><span class="legend-dot" style="background: var(--green-primary);"></span>Senior Debt 100%</span></div>
-          </div>
-          <div class="kpi-grid">
-            <div class="kpi"><span class="kpi-value qualitative">Sovereign-Linked</span><span class="kpi-label">Counterparty</span></div>
-            <div class="kpi"><span class="kpi-value qualitative">Existing</span><span class="kpi-label">Operating Asset</span></div>
-            <div class="kpi"><span class="kpi-value qualitative">Long-Tenor</span><span class="kpi-label">Target Profile</span></div>
-            <div class="kpi"><span class="kpi-value qualitative">USD-Denom.</span><span class="kpi-label">Currency</span></div>
-          </div>
-        </div>
-        <div class="card-body">
-          <p class="card-summary">Large-scale refinancing of debt linked to an Independent Power Producer in a stable West African economy with a structured offtake.</p>
-          <ul class="highlights">
-            <li>Established operating IPP with proven cashflow</li>
-            <li>Refinancing extends tenor and reduces cost of capital</li>
-            <li>Strong macro fundamentals; market widely covered by IFIs</li>
-            <li>Ideal for institutional debt funds and DFIs</li>
-          </ul>
-          <div class="card-tags"><span class="tag">Refinancing</span><span class="tag">Power</span><span class="tag">Institutional</span></div>
-        </div>
-        <div class="card-footer">
-          <div><span class="card-ticket-label">Refinancing</span><span class="card-ticket">USD 1.6B</span></div>
-          <button class="btn-request" onclick="openModal('Power Sector Debt Refinancing')">Request IM</button>
         </div>
       </article>
 
@@ -671,6 +622,47 @@
         </div>
       </article>
 
+      <article class="card" data-sector="tech" data-region="ssa" data-type="raise">
+        <div class="card-header">
+          <span class="card-status status-active">Active Mandate</span>
+          <div class="card-sector">Tech · AI &amp; Digital Commerce</div>
+          <h3 class="card-title">AI Digital Commerce Platform</h3>
+          <div class="card-geo">Sub-Saharan Africa · Tech Hub</div>
+        </div>
+        <div class="card-viz">
+          <div>
+            <div class="donut-wrap">
+              <svg class="donut" viewBox="0 0 120 120">
+                <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="donut-equity" cx="60" cy="60" r="50" stroke-dasharray="314.16 314.16" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="donut-center"><div class="donut-center-value">$500K</div><div class="donut-center-label">Seed Round</div></div>
+            </div>
+            <div class="donut-legend"><span><span class="legend-dot" style="background: var(--amber);"></span>Equity Round</span></div>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi"><span class="kpi-value">150</span><span class="kpi-label">Beta Users</span></div>
+            <div class="kpi"><span class="kpi-value qualitative">Pre-Revenue</span><span class="kpi-label">Stage</span></div>
+            <div class="kpi"><span class="kpi-value qualitative">B2B SaaS</span><span class="kpi-label">Model</span></div>
+            <div class="kpi"><span class="kpi-value amber">$1.1B</span><span class="kpi-label">SOM</span></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-summary">AI-powered platform serving e-commerce and digital commerce operators with productivity tools for content creation and brand workflows.</p>
+          <ul class="highlights">
+            <li>Founding team with prior product, design, and AI/ML scale-up experience</li>
+            <li>Beta platform live with active user cohort and early product-market fit signals</li>
+            <li>Subscription model with multi-tier pricing (USD 10–25/month)</li>
+            <li>Positioned in Africa's growing digital commerce ecosystem</li>
+          </ul>
+          <div class="card-tags"><span class="tag">Capital Raise</span><span class="tag">AI/SaaS</span><span class="tag">Early-Stage</span><span class="tag">Sub-Saharan Africa</span></div>
+        </div>
+        <div class="card-footer">
+          <div><span class="card-ticket-label">Seed Round</span><span class="card-ticket">USD 500K</span></div>
+          <button class="btn-request" onclick="openModal('AI Digital Commerce Platform')">Request IM</button>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -803,7 +795,6 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  /* AUTO-RESIZE — sends precise height to parent (Wix) */
   let lastHeight = 0;
   function sendHeight() {
     const ctaSection = document.querySelector('.cta-section');
@@ -818,7 +809,7 @@
     lastHeight = height;
     try {
       window.parent.postMessage({ type: 'weaverDealRoomHeight', height: height }, '*');
-    } catch (e) { /* cross-origin parent — ignore */ }
+    } catch (e) {}
   }
 
   window.addEventListener('load', () => {
